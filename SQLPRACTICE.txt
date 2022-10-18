@@ -1,0 +1,80 @@
+SQL Server is a relational database management system (RDBMS) developed by Microsoft
+
+sql servers
+1.SQL Server Enterprise: It is used in the high end
+2.SQL Server Standard: Itis suitable for Mid-Tier Application
+
+queries
+
+1.select * from sys.tables - for displaying all tables in database
+
+//for udating column
+2.select * from DimAccount
+update DimAccount SET AccountType='savings' where AccountKey=1
+
+//create data base using query
+ Create database <Database Name>
+
+//renaming database
+Alter database DatabaseName Modify Name = NewDatabaseName
+
+//to delete or drop database
+Drop Database DatabaseThatYouWantToDrop
+
+#STATEMENTS
+DCL (2 commands- Grant, Revoke)
+TCL (3 commands- commit, rollback, savepoint)
+DML - (3 commands- Insert, Update, Delete).
+#DDL - DDL statements are used to alter/modify a database or table structure
+HAS 5 COMMANDS
+1.ALTER-This command is used to change or modify the structure of a table.
+#USES
+-Increase/decrease the width of a column - ALTER TABLE TABLENAME ALTER COLUMN Name VARCHAR(100) 
+
+-Change the data type of a column-ALTER TABLE TABLENAME ALTER COLUMN Name NVARCHAR(100)
+
+-Change the NOT NULL to NULL or NULL to NOT NULL-ALTER TABLE TABLENAME ALTER COLUMN No INT NOT NULL/ALTER TABLE Student ALTER COLUMN No INT NULL
+
+-Used to add a new column to an existing table-ALTER TABLE <TABLENAME> ADD <NEWCOLUMNNAME> <DATA TYPE>[NEW SIZE]
+
+
+-Used to drop/DELETE an existing column - ALTER TABLE <TABLENAME> DROP COLUMN <COLUMNNAME>
+
+-We can add a new constraint.
+-It can drop an existing constraint on a table.
+-Disable or re-enable check constraint of a table.
+-Changing a column name in the table.
+
+2.RENAME-SP_RENAME ‘<TABLE NAME>.<OLD COLUMN NAME>’, ‘NEW COLUMN NAME’
+EX:SP_RENAME ‘Student.Name’, ‘StudentName‘
+
+EX:RENAMIG OLD TABLE TO NEW TABLE
+SP_RENAME ‘Student‘, ‘StudentDetails’
+
+
+
+3.CREATE - USED TO CFREATE A TABLE
+
+4.DROP -DROP TABLE Student(DELETS TABLE FROM DATABASE)
+
+5.TRUNCATE-
+TRUNCATE TABLE Student
+
+Note: The truncate command will delete rows but not the structure of the table.
+
+##CREATING TABLE
+
+CREATE TABLE TABLENAME
+(
+COLUMNNAME DATATYPE SIZE,
+)
+
+FOR STRING DATATYPE - VARCHAR
+SALARY- DECIMAL
+
+EXAMPLE: CREATE TABLE EMployee 
+         ( 
+          EMployee INT, 
+          Ename  VARCHAR(max), 
+          salary DECIMAL(6, 2) 
+          ) 
