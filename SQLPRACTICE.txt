@@ -1,10 +1,10 @@
-SQL Server is a relational database management system (RDBMS) developed by Microsoft
+-SQL Server is a relational database management system (RDBMS) developed by Microsoft
 
 sql servers
 1.SQL Server Enterprise: It is used in the high end
 2.SQL Server Standard: Itis suitable for Mid-Tier Application
 
-queries
+practiced queries
 
 1.select * from sys.tables - for displaying all tables in database
 
@@ -78,3 +78,112 @@ EXAMPLE: CREATE TABLE EMployee
           Ename  VARCHAR(max), 
           salary DECIMAL(6, 2) 
           ) 
+
+19/10/22
+
+The SQL SELECT Statement
+The SELECT statement is used to select data from a database.
+
+The data returned is stored in a result table, called the result-set.
+
+--QUERY FOR CREATING A TABLE
+
+create table StudentDetails
+(
+sname VARCHAR(MAX),
+stdid INT
+)
+
+---
+SELECT SYNTAX
+
+SELECT column1, column2, ...
+FROM table_name;
+
+-WHERE CLASS SYNTAX - 
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+
+--OPERATORS----
+AND OPERATOR SYNTAX
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 AND condition2 AND condition3 ...;
+
+#OR SYNTAX
+
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 OR condition2 OR condition3 ...;
+
+NOT Syntax
+SELECT column1, column2, ...
+FROM table_name
+WHERE NOT condition;
+
+LIKE Syntax
+SELECT column1, column2, ...
+FROM table_name
+WHERE columnN LIKE pattern;
+
+-IN Operator
+ The IN operator allows you to specify multiple values in a WHERE clause.
+
+The IN operator is a shorthand for multiple OR conditions.
+
+IN Syntax
+SELECT column_name(s)
+FROM table_name
+WHERE column_name IN (value1, value2, ...);
+
+-BETWEEN Syntax
+
+SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+----------------
+
+ -ORDER BY Keyword
+  The ORDER BY keyword is used to sort the result-set in ascending or descending order.
+
+The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC
+
+-INSER INTO syntax
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+
+-UPDATE SYNTAX
+
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+
+-SQL JOIN
+A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+
+INNER JOIN Syntax
+SELECT column_name(s)
+FROM table1
+INNER JOIN table2
+ON table1.column_name = table2.column_name;
+
+- RIGHT JOIN 
+The RIGHT JOIN  returns all records from the right table (table2), and the matching records from the left table (table1). 
+The result is 0 records from the left side, if there is no match.
+
+RIGHT JOIN Syntax
+SELECT column_name(s)
+FROM table1
+RIGHT JOIN table2
+ON table1.column_name = table2.column_name;
+
+-- LEFT JOIN 
+  The LEFT JOIN keyword returns all records from the left table (table1), and the matching records from the right table (table2). 
+  The result is 0 records from the right side, if there is no match.
+
+LEFT JOIN Syntax
+SELECT column_name(s)
+FROM table1
+LEFT JOIN table2
+ON table1.column_name = table2.column_name;
