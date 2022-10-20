@@ -159,10 +159,13 @@ UPDATE table_name
 SET column1 = value1, column2 = value2, ...
 WHERE condition;
 
+#20/10/22
 -SQL JOIN
 A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
 
-INNER JOIN Syntax
+INNER JOIN : Returns only matching Rows from the tables and elimnates unmatching rows
+
+Syntax:
 SELECT column_name(s)
 FROM table1
 INNER JOIN table2
@@ -187,3 +190,15 @@ SELECT column_name(s)
 FROM table1
 LEFT JOIN table2
 ON table1.column_name = table2.column_name;
+
+
+create table StudentDetails1
+(
+stdGender varchar(9),
+USN INT,
+CLGNAME VARCHAR(10),
+)
+
+INSERT INTO StudentDetails1 VALUES('MALE',4363145,'KBN')
+INSERT INTO StudentDetails1 VALUES('MALE',854544,'OXFORD')
+INSERT INTO StudentDetails1 VALUES('MALE',965411,'RVMC')
