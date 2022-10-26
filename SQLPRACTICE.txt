@@ -202,3 +202,53 @@ CLGNAME VARCHAR(10),
 INSERT INTO StudentDetails1 VALUES('MALE',4363145,'KBN')
 INSERT INTO StudentDetails1 VALUES('MALE',854544,'OXFORD')
 INSERT INTO StudentDetails1 VALUES('MALE',965411,'RVMC')
+
+#21-10-22
+
+-Attended session on clauses group by,order by
+
+#26-10-22
+
+-Attended session on Joins
+-practiced joining tables 
+
+#clauses
+
+1)order by clause - sorting the data either in ascending or descending order of a query based on a specified column or list of columns.
+
+-SYNTAX: SELECT expressions FROM tables [WHERE conditions] ORDER BY expression [ASC | DESC];
+  
+2)group by clause- used to divide similar types of records or data as a group and then return. If we use group by clause in the query, 
+ then we should use grouping/aggregate function such as count(), sum(), max(), min(), and avg() functions.
+-syntax:
+  SELECT expression1, expression2, expression_n, 
+      aggregate_function (expression)
+      FROM tables
+       [WHERE conditions]
+        GROUP BY expression1, expression2, expression_n;
+
+-practiced self join query
+
+(created one table below)
+CREATE TABLE EMPLOYEDETAILS
+(
+EMPID INT,
+ENAME VARCHAR(10),
+MANAGERID INT
+)
+
+(inserting values into it)
+INSERT INTO EMPLOYEDETAILS VALUES(1,'JOHN',3)
+INSERT INTO EMPLOYEDETAILS VALUES(2,'TOM',1)
+INSERT INTO EMPLOYEDETAILS VALUES(3,'JACK',1)
+INSERT INTO EMPLOYEDETAILS VALUES(4,'SMITH',2)
+INSERT INTO EMPLOYEDETAILS VALUES(5,'JOHNNY',1)
+
+SELECT * FROM EMPLOYEDETAILS
+
+(joining table to itself using alias)
+SELECT E.ENAME AS EMPLOYE,M.ENAME AS MANAGER
+FROM EMPLOYEDETAILS E
+LEFT JOIN EMPLOYEDETAILS M
+ON E.MANAGERID=M.EMPID
+
