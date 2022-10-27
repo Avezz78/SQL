@@ -252,3 +252,43 @@ FROM EMPLOYEDETAILS E
 LEFT JOIN EMPLOYEDETAILS M
 ON E.MANAGERID=M.EMPID
 
+#27-10-22
+
+-foreign key syntax - foreign key (columnName) REFERENCES table2(columnname)
+-use - prevents invalid data to b inserted or updated, values should match in the primary key column orelse error
+
+-select * from sys.procedures - for seeing all sp present in database
+-functions - contains a set of sql statements to perform specefic task
+-scalar func - returns a single value
+-inline func - 
+
+CASE STATEMENT WORKS AS IF ELSE IN SQL
+
+WEN U WANT TO DEFN OF VIEW - SP_HELPTEXT 'VIEWNAME'
+WEN U WANT TO DEFN OF TABLE = SP_HELP
+
+SELECT * FRO SYS.OBJECTS- 
+
+FOR PROCEDURE - BROWNISH COLOUR
+
+WE CAN CALL FUNCTION IN STORED PROCEDURE
+WE CANT CALL STORED PROCEDURE IN FUNCTION
+
+-- STORED PROCEDURES
+A stored procedure is a prepared SQL code that you can save, so the code can be reused over and over again.
+
+So if you have an SQL query that you write over and over again, save it as a stored procedure, and then just call it to execute it.
+
+You can also pass parameters to a stored procedure, so that the stored procedure can act based on the parameter value(s) that is passed.
+
+Stored Procedure Syntax :
+CREATE PROCEDURE procedure_name
+AS
+sql_statement
+GO;
+
+Execute a Stored Procedure:
+EXEC procedure_name;
+
+-Attended sessions on joins,stored procedures
+
