@@ -290,5 +290,31 @@ GO;
 Execute a Stored Procedure:
 EXEC procedure_name;
 
--Attended sessions on joins,stored procedures
+-Attended sessions on joins,stored procedures,views
 
+#28-10-22
+
+--INDEXERS: The goal of the index is to make the search operation faster.
+-Indexes make the search operation faster by creating something called a B-Tree (Balanced Tree) structure internally.
+
+--The Clustered Index: in SQL Server defines the order in which the data is physically stored in a table.
+  In the case of a clustered index,  the leaf node store the actual data.
+  As the leaf nodes store the actual data a table can have only one clustered index.
+  The Clustered Index by default was created when we created the primary key constraint for that table.
+  that means the primary key column creates a clustered index by default.
+
+-- NON-CLUSTERED INDEX :In SQL Server Non-Clustered Index, the arrangement of data in the index table will be different
+   From the arrangement of data in the actual table.The data is stored in one place and the index is stored in another place
+   Moreover, the index will have pointers to the storage location of the actual data.
+
+--The following commands are used to control transactions.
+
+COMMIT − to save the changes.
+syntax:COMMIT;
+
+ROLLBACK − to roll back the changes.This command can only be used to undo transactions
+syntax:ROLLBACK;
+
+SAVEPOINT − creates points within the groups of transactions in which to ROLLBACK.
+
+SET TRANSACTION − Places a name on a transaction.
