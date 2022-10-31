@@ -318,3 +318,86 @@ syntax:ROLLBACK;
 SAVEPOINT − creates points within the groups of transactions in which to ROLLBACK.
 
 SET TRANSACTION − Places a name on a transaction.
+
+31/10/22 -- have gone through functions
+--- Built-In Functions?
+In SQL Server a built-in function is a piece of code that takes one or more inputs and returns a value.  An example of a built-in function is ABS(), which when given a value calculates the absolute (non-negative) value of the number.
+
+Note: SQL built-in functions may or may not take parameters but always returns a value.
+
+There are several built-in functions available in SQL Server. In this article, we will discuss the most common use of built-in string functions in SQL Server.
+
+ASCII(Character_Expression)
+The ASCII function returns the ASCII code that represents a specific character.
+To find the ASCII Code of the capital letter ‘A’
+
+Example: Select ASCII(‘A’)
+
+Output: 65
+
+---CHAR(Integer_Expression)
+   This function converts an integer ASCII code to a character. That means the CHAR function does the opposite of the ASCII function. The Integer_Expression should be between 0 and 255.
+
+Printing uppercase alphabets using CHAR() function:
+DECLARE @Number int
+SET @Number = 65
+WHILE(@Number <= 90)
+BEGIN
+  PRINT CHAR(@Number)
+  SET @Number = @Number + 1
+END
+Note: The while loop will become an infinite loop if you forget to include the following line.
+
+--LTRIM(Character_Expression)
+This function returns a character expression after it removes the leading blanks. That means it removes blanks on the left-hand side of the given character expression.
+
+Example: Removing the 3 white spaces on the left-hand side of the ‘   Hello’ string using LTRIM() function.
+
+Select LTRIM(‘   Hello’)
+
+Output: Hello
+
+--RTRIM(Character_Expression)
+This function returns a character string after truncating all trailing blanks. That means it removes blanks on the right-hand side of the given character expression.
+
+Example: Removing the 3 white spaces on the left-hand side of the ‘Hello   ‘ string using RTRIM() function.
+
+Select RTRIM(‘Hello   ‘)
+
+Output: Hello
+
+
+--REVERSE(‘Any_String_Expression’)
+This function returns the reverse of a character expression. That means it reverses all the characters in the given string expression.
+
+Example: Select REVERSE(‘ABCDEFGHIJKLMNOPQRSTUVWXYZ’)
+Output: ZYXWVUTSRQPONMLKJIHGFEDCBA
+
+LEN(String_Expression)
+This function returns the number of characters, instead of the number of bytes, of the specified string expression, excluding trailing blanks. That means it returns the count of total characters in the given string expression, excluding the blanks at the end of the expression.
+
+Example: Select LEN(‘ Functions   ‘)
+
+Output: 10
+
+--LEFT(Character_Expression, Integer_Expression)
+  This function returns the left part of a character string with the specified number of characters. That means it returns the specified number of characters from the left-hand side of the given character expression.
+  Example: Select LEFT(‘ABCDE’, 3)
+   Output: ABC
+
+--CHARINDEX(‘Expression_To_Find’, ‘Expression_To_Search’, ‘Start_Location’)
+   This function returns the starting position of the specified expression in a character string. The Start_Location parameter is optional.
+
+Example: In this example, we get the starting position of ‘@’ character in the email string ‘sara@aaa.com’. 
+
+Select CHARINDEX(‘@’,’hina@aaa.com’,1)
+Output: 5
+
+--SUBSTRING(‘expression’, ‘Start’, ‘Length’)
+  As the name, suggests, this function returns substring (part of the string), from the given expression. You specify the starting location using the ‘start’ parameter and the number of characters in the substring using the ‘Length’ parameter. All 3 parameters are mandatory.
+
+Example: Display just the domain part of the given email ‘info@dotnettutorials.net’.
+
+Select SUBSTRING(‘info@dotnettutorials.net’,6, 19)
+
+Output: dotnettutorials.net
